@@ -1,6 +1,6 @@
-saldo = 0
+Saldo = 0
 
-crédito = 0 
+Crédito = 0 
 
 while True:
 
@@ -12,36 +12,36 @@ while True:
 [ 5 ] - Sair''')
     print('=' * 31)
 
-    opção = int(input('Escolha uma das opções de cima: '))
+    Opção = int(input('Escolha uma das opções de cima: '))
 
     print('~-' * 30)
-    if opção == 1:
-        print(f'Seu saldo atual: R${saldo:.2f}')
+    if Opção == 1:
+        print(f'Seu saldo atual: R${Saldo:.2f}')
 
-    elif opção == 2:
-        Valor_de_deposito = float(input('Quanto você quer depositar na sua conta? R$'))
-        saldo += Valor_de_deposito
-        print(f'Você depositou R${Valor_de_deposito:.2f}.')
+    elif Opção == 2:
+        Valor_de_Deposito = float(input('Quanto você quer depositar na sua conta? R$'))
+        Saldo += Valor_de_Deposito
+        print(f'Você depositou R${Valor_de_Deposito:.2f}.')
 
-    elif opção == 3:
-        Valor_de_saque = float(input('Quanto você quer sacar da sua conta? R$'))
-        saldo -= Valor_de_saque
-        print(f'Você sacou R${Valor_de_saque:.2f}.')
+    elif Opção == 3:
+        Valor_de_Saque = float(input('Quanto você quer sacar da sua conta? R$'))
+        Saldo -= Valor_de_Saque
+        print(f'Você sacou R${Valor_de_Saque:.2f}.')
 
-        if saldo < 0:
-            crédito_de_saque = str(input('Saldo Insuficiente. Você quer sacar em crédito? (sim/não): '))
+        if Saldo < 0:
+            Crédito_de_Saque = str(input('Saldo Insuficiente. Você quer sacar em crédito? (sim/não): '))
 
-            if crédito_de_saque in 'sim':
-                diferente = Valor_de_saque - saldo
-                crédito += diferente
-                print(f'Você está usando R${diferente:.2f} de crédito.')
-                saldo = 0
-                print(f'Seu saldo: R${saldo:.2f}')
+            if Crédito_de_Saque in 'sim':
+                Valor_de_Crédito = Valor_de_Saque - Saldo
+                Crédito += Valor_de_Crédito
+                print(f'Você está usando R${Valor_de_Crédito:.2f} de crédito.')
+                Saldo = 0
+                print(f'Seu saldo: R${Saldo:.2f}')
 
-    elif opção == 4:
-        print(f'Seu saldo de crédito atual: R${crédito:.2f}')
+    elif Opção == 4:
+        print(f'Seu saldo de crédito atual: R${Crédito:.2f}')
 
-    elif opção == 5:
+    elif Opção == 5:
         print('Saindo... Tenha um ótimo dia.')
         break
 
