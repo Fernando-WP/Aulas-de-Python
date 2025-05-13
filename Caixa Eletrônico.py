@@ -14,7 +14,7 @@ while True:
 
     Opção = int(input('Escolha uma das opções de cima: '))
 
-    print('~-' * 30)
+    print('~=' * 30)
     if Opção == 1:
         print(f'Seu saldo atual: R${Saldo:.2f}')
 
@@ -47,4 +47,4 @@ while True:
 
     else:
         print('Opção Inválida. TENTA NOVAMENTE!')
-    print('~-' * 30)
+    print('~=' * 30)
