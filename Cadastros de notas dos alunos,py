@@ -1,0 +1,75 @@
+import os 
+
+alunos = []
+
+def menu_de_opções():
+    print('''\n[ 1 ] - Cadastra o aluno
+[ 2 ] - Ver cadastro do aluno
+[ 3 ] - Sair do programa''')
+    
+
+while True:
+
+    menu_de_opções()
+    try:
+        escolhar = int(input('Escolhar uma das opções: '))
+    except ValueError:
+        print('Por favor, digite a opções corretamenta.')
+        continue
+
+    if escolhar == 1:
+        os.system('cls')
+        nome = str(input('\nDigita o nome do aluno(a): '))
+        try:
+            nota1 = float(input('\nDigita a nota do aluno(a) da materia de português: '))
+            nota2 = float(input('Digita a nota do aluno(a) da materia de matematica: '))
+        except ValueError:
+            print('Nota inválido, digita novamente a nota.')
+        média = (nota1 + nota2) / 2
+        print(f'O aluno(a) {nome} está com média de {média:.2f}')
+        alunos.append({
+            'Nome': nome,
+            'Português': nota1,
+            'Matematica': nota2,
+            'Média': média,
+        })
+
+    elif escolhar == 2:
+        if not alunos:
+            print('Nenhum aluno(a) foi cadastrador nesse momento')
+        else:
+            médias = []
+
+            os.system('cls')
+
+            for dados in alunos:
+                print(f'\nNome do Aluno(a): {dados['Nome']}')
+                print(f'Materia de Português: {dados['Português']}')
+                print(f'Materia de Matematica: {dados['Matematica']}')
+                print(f'Total de Média: {dados['Média']:.2f}\n')
+
+                if dados['Média'] >= 7.0:
+                    print('Aluno(a) APROVADO(A)!')
+                else:
+                    print('Aluno(a) REPROVADO(A)!')
+
+                médias.append(dados['Média'])
+
+            maior = max(médias)
+            menor = min(médias)
+
+            print(f'\nO maior nota foi {maior:.2f} e o menor nota foi {menor:.2f}')
+
+            continuar = str(input('\nDeseja continuar? [S/N]: ')).upper().strip()
+            if continuar in 'Nn':
+                os.system('cls')
+                print('Saindo do programa.\n')
+                break
+            else:
+                os.system('cls')
+
+    elif escolhar == 3:
+        print('\nSaindo do programa.')
+        break
+    else:
+        print('\nOpção inválida.')
